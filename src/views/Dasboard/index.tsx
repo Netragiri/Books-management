@@ -16,9 +16,6 @@ function Dashboard() {
   const { bookList }: any = useContext(BookContext)
   const [allbooks] = bookList
 
-  console.log({ allbooks })
-
-
   useEffect(() => {
     const endOffset = itemOffset + limit;
     setCurrentItems(allbooks.slice(itemOffset, endOffset));

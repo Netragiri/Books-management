@@ -78,3 +78,10 @@ export const pagePerLimitArray = [
     { value: 30, label: '30' }
   ]
 
+
+  export const TITLES = {
+    book:{
+        add: "Add Book",
+        edit: "Update Book"
+    }
+  }

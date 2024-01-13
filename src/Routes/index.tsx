@@ -5,6 +5,7 @@ import Signup from "../auth/Signup";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../views/Dasboard";
 import AddBook from "../views/Books/AddBook";
+import EditBook from "../views/Books/EditBook";
 
 function AllRoutes() {
   return (
@@ -14,6 +15,7 @@ function AllRoutes() {
       <Route path="/login" element={<PublicRoute element={<Login />} />} />
       <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
       <Route path="/add-book" element={<PrivateRoute element={<AddBook />} />} />
+      <Route path="/edit-book/:id" element={<PrivateRoute element={<EditBook />} />} />
     </Routes>
   );
 }

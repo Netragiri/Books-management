@@ -14,12 +14,10 @@ function Login() {
   const handleFormSubmit = (values: FormValues) => {
     if (userProfile && userProfile.email === values.email && userProfile.password === values.password) {
       successToast('Login Successfully');
-      localStorage.setItem("isLoggdIn","true")
-      console.log(userProfile, values);
-      setTimeout(()=>{
-
+      localStorage.setItem("isLoggdIn", "true")
+      setTimeout(() => {
         navigate('/dashboard');
-      },500)
+      }, 500)
     } else {
       errorToast('Invalid credentials!');
     }
@@ -56,7 +54,7 @@ function Login() {
                 <p className="error">
                   {errors.email && touched.email && errors.email}
                 </p>
-                <PasswordInput handleBlur={handleBlur} handleChange={handleChange} value={values.password}/>
+                <PasswordInput handleBlur={handleBlur} handleChange={handleChange} value={values.password} />
                 <p className="error">
                   {errors.password && touched.password && errors.password}
                 </p>
