@@ -39,18 +39,7 @@ function Dashboard() {
           <Col xs={12} sm={4} className="text-end"><Button onClick={() => navigate("/add-book")}>Add book</Button></Col>
         </Row>
         {allbooks?.length > 0 ? <>
-          <Table striped bordered hover className="mt-3">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Author</th>
-                <th>Price</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <Books books={currentItems} />
-          </Table>
+          <Books books={currentItems} />
           <ReactPaginate
             breakLabel="..."
             nextLabel=">"

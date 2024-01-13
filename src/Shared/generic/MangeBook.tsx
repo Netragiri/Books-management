@@ -23,8 +23,8 @@ const ManageBook = ({ handleFormSubmit, initialValues, title }: ManageBookProps)
                     <Formik initialValues={initialValues} validationSchema={bookSchema} onSubmit={handleFormSubmit} enableReinitialize={true}>
                         {({ handleSubmit }) => (
                             <Form onSubmit={handleSubmit} className='mt-4'>
-                                <FormField label="Name" name="name" type="text" />
-                                <FormField label="Author" name="author" type="text" />
+                                <FormField label="Book name" name="name" type="text" />
+                                <FormField label="Author name" name="author" type="text" />
                                 <FormField label="Price" name="price" type="text" />
 
                                 <Button type="submit" variant="primary" className='mt-3'>

@@ -18,12 +18,15 @@ const AddBook = () => {
   };
 
   const handleFormSubmit = (values: BookAddValues) => {
-    const updatedBooks = [...books, {
-      name: values.name,
-      author: values.author,
-      price: values.price,
-      id: Date.now().toString(),
-    }]
+    const updatedBooks = [
+      {
+        name: values.name,
+        author: values.author,
+        price: values.price,
+        id: Date.now().toString(),
+      },
+      ...books,
+    ];
     setBooks(updatedBooks)
     localStorage.setItem("bookData", JSON.stringify(updatedBooks))
     navigate("/dashboard")

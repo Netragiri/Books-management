@@ -29,8 +29,10 @@ export const signupSchema = Yup.object().shape({
 
 
 export const bookSchema = Yup.object({
-  name: Yup.string().required('Name is required'),
-  author: Yup.string().required('Author is required'),
-  price: Yup.string().required('Price is required'),
+  name: Yup.string().trim().required('Name is required'),
+  author: Yup.string().trim().required('Author is required'),
+  price: Yup.string()
+    .required('Price is required')
+    .matches(/^[0-9]+$/, 'Price must contain only numbers'),
 });
   

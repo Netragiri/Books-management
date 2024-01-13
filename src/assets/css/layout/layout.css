@@ -5,3 +5,9 @@
 h3{
     color: #fff !important;
 }
+
+.action-btns{
+    background:transparent;
+    border: none;
+    border:1px solid transparent
+}
