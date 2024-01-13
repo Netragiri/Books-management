@@ -1,26 +1,16 @@
 
 import { Formik } from "formik";
-import * as Yup from "yup";
-
-// Creating schema
-const schema = Yup.object().shape({
-  email: Yup.string()
-    .required("Email is a required field")
-    .email("Invalid email format"),
-  password: Yup.string()
-    .required("Password is a required field")
-    .min(8, "Password must be at least 8 characters"),
-});
+import { signupSchema } from "../Shared/Utills/validationSchema";
 
 function Signup() {
   return (
     <>
       <Formik
-        validationSchema={schema}
-        initialValues={{ email: "", password: "" }}
+        validationSchema={signupSchema}
+        initialValues={{ email: "", password: "", confirm_password: "" }}
         onSubmit={(values) => {
-          // Alert the input values of the form that we filled
-          alert(JSON.stringify(values));
+          const data = JSON.stringify({email:values.email,password:values.password})
+          localStorage.setItem("userProfile",data)
         }}
       >
         {({
@@ -34,7 +24,7 @@ function Signup() {
           <div className="login">
             <div className="form">
               <form noValidate onSubmit={handleSubmit}>
-                <span>Login</span>
+                <span>Sign Up</span>
                 <input
                   type="email"
                   name="email"
@@ -60,7 +50,19 @@ function Signup() {
                 <p className="error">
                   {errors.password && touched.password && errors.password}
                 </p>
-                <button type="submit">Login</button>
+                <input
+                  type="password"
+                  name="confirm_password"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.confirm_password}
+                  placeholder="Re-enter password"
+                  className="form-control"
+                />
+                <p className="error">
+                  {errors.confirm_password && touched.confirm_password && errors.confirm_password}
+                </p>
+                <button type="submit">Sign Up</button>
               </form>
             </div>
           </div>
