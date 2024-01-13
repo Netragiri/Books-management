@@ -1,17 +1,31 @@
 
-import { Formik } from "formik";
+import { Field, Formik } from "formik";
 import "../assets/css/auth/login.css"
 import { loginschema } from "../Shared/Utills/validationSchema";
+import { Link, useNavigate } from "react-router-dom";
+import { errorToast, successToast } from "../Shared/helper";
+import { FormValues } from "../types/global";
+import PasswordInput from "../Shared/generic/passwordInput";
 
 function Login() {
+  const navigate = useNavigate()
+  const userProfile = localStorage.getItem("userProfile") && JSON.parse(localStorage.getItem("userProfile") || "null")
+
+  const handleFormSubmit = (values: FormValues) => {
+    if (userProfile && userProfile.email === values.email && userProfile.password === values.password) {
+      navigate('/dashboard');
+      successToast('Login Successfully');
+      console.log(userProfile, values);
+    } else {
+      errorToast('Invalid credentials!');
+    }
+  };
   return (
     <>
       <Formik
         validationSchema={loginschema}
         initialValues={{ email: "", password: "" }}
-        onSubmit={(values) => {
-          console.log(values)
-        }}
+        onSubmit={(values) => handleFormSubmit(values)}
       >
         {({
           values,
@@ -25,7 +39,7 @@ function Login() {
             <div className="form">
               <form noValidate onSubmit={handleSubmit}>
                 <span>Login</span>
-                <input
+                <Field
                   type="email"
                   name="email"
                   onChange={handleChange}
@@ -38,20 +52,18 @@ function Login() {
                 <p className="error">
                   {errors.email && touched.email && errors.email}
                 </p>
-                <input
-                  type="password"
-                  name="password"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.password}
-                  placeholder="Enter password"
-                  className="form-control"
-                />
+                <PasswordInput handleBlur={handleBlur} handleChange={handleChange} value={values.password}/>
                 <p className="error">
                   {errors.password && touched.password && errors.password}
                 </p>
-                <button type="submit">Login</button>
+                <button type="submit" className="submit-btn">Login</button>
               </form>
+              <div className="mt-3 flex">
+                Don&apos;t have an account yet?{' '}
+                <Link to="/sign-up" className="sign-up-btn ms-2 fw-bold">
+                  Sign-up
+                </Link>
+              </div>
             </div>
           </div>
         )}

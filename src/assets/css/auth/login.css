@@ -10,7 +10,7 @@
     background: #FFFFFF;
     border-radius: 10px;
     max-width: 360px;
-    margin: 0 auto 100px;
+    margin: 0 auto;
     padding: 45px;
     text-align: center;
   }
@@ -31,7 +31,7 @@
     background: #dbdbdb;
   }
   
-  .form button {
+  .form .submit-btn {
     text-transform: uppercase;
     outline: 0;
     background: #4b6cb7;
@@ -44,6 +44,11 @@
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
+  }
+
+  .sign-up-btn{
+    /* background: #4b6cb7 !important; */
+    color: #4b6cb7 !important;
   }
   
   .form button:active {
@@ -62,4 +67,23 @@
     text-align: left;
     font-size: 13px;
     color: red;
+  }
+
+  .password-box {
+    position: relative;
+  }
+  
+  .password-box .show-hide-pass {
+    border: none;
+    position: absolute;
+    right: 5px;
+    top: 28px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: url('../../icons/status-false.svg') no-repeat center center/cover;
+  }
+  
+  .password-box .show-hide-pass.show-pass {
+    background-image: url('../../icons/status-true.svg');
   }
