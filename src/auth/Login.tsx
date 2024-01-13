@@ -13,9 +13,13 @@ function Login() {
 
   const handleFormSubmit = (values: FormValues) => {
     if (userProfile && userProfile.email === values.email && userProfile.password === values.password) {
-      navigate('/dashboard');
       successToast('Login Successfully');
+      localStorage.setItem("isLoggdIn","true")
       console.log(userProfile, values);
+      setTimeout(()=>{
+
+        navigate('/dashboard');
+      },500)
     } else {
       errorToast('Invalid credentials!');
     }

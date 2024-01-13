@@ -20,7 +20,7 @@ function Signup() {
       <Formik
         validationSchema={signupSchema}
         initialValues={{ email: "", password: "", confirm_password: "" }}
-        onSubmit={(values, { resetForm }) => handleFormSubmit(values)}
+        onSubmit={(values) => handleFormSubmit(values)}
       >
         {({
           values,

@@ -1,23 +1,19 @@
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 interface PublicRouteProps {
   element: any;
 }
 
 function PublicRoute({ element: Component }: PublicRouteProps) {
-  const token = localStorage.getItem('token');
-  const profile = JSON.parse(localStorage.getItem('userProfile') || 'null');
+  const navigate = useNavigate()
+  const isLoggdIn = localStorage.getItem("isLoggdIn")
 
-  if (token && profile) {
-    // Check your condition here and navigate accordingly
-    // Example: If some condition is met, return <Navigate to="/dashboard" />;
-    
-    // If you want to render the original component, you can return it like this:
-    return Component;
+  if (isLoggdIn === "true") {
+    setTimeout(() => {
+      navigate("/dashboard")
+    }, 500)
   } else {
-    // Redirect to login or any other route if the conditions are not met
-    console.log("hii");
-    return <Navigate to="/login" replace/>;
+    return Component;
   }
 }
 
