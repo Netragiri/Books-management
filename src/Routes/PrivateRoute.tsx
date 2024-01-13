@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
+import MainLayout from '../views/MainLayout';
 
 interface PrivateRouteProps {
-    element: any; // Change the type to React.ReactNode
+  element: JSX.Element; // Change the type to React.ReactNode
   }
 
   function PrivateRoute({ element: Component }: PrivateRouteProps) {
@@ -12,8 +13,9 @@ interface PrivateRouteProps {
     setTimeout(() => {
       navigate("/")
     }, 500)
+    return null;
   } else {
-    return Component
+    return <MainLayout> {Component} </MainLayout>
   }
 }
 

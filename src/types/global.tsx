@@ -3,3 +3,8 @@ export interface FormValues {
     password: string;
     confirm_password?:string
   }
+
+export interface DropDownValues {
+  value: number,
+  label: string
+}
