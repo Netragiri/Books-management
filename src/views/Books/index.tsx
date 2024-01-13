@@ -9,9 +9,9 @@ interface BookProps {
 function Books({ books }: BookProps) {
   return (
     <tbody>
-      {books?.map((book) => (
-        <tr key={book.id}>
-          <td>{book.id}</td>
+      {books?.map((book,index) => (
+        <tr key={book?.id}>
+          <td>{index+1}</td>
           <td>{book.name}</td>
           <td>{book.author}</td>
           <td>${book.price}</td>

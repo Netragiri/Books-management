@@ -8,3 +8,10 @@ export interface DropDownValues {
   value: number,
   label: string
 }
+
+export interface BookAddValues {
+  author: string,
+  name: string,
+  price:string,
+  id?:string
+}
