@@ -22,21 +22,26 @@ function Dashboard() {
     setPageCount(Math.ceil(allbooks.length / limit));
   }, [itemOffset, limit, allbooks]);
 
-  // Invoke when user click to request another page.
   const handlePageClick = (event: any) => {
     const newOffset = event.selected * limit % allbooks.length;
     setItemOffset(newOffset);
   };
 
+  useEffect(() => {
+    if (currentItems?.length === 0) {
+      setItemOffset(0);
+    }
+  }, [currentItems]);
+  
   return (
     <>
       <Container fluid="md" className="pt-3">
         <Row>
-          <Col xs={12} sm={4}>
+          <Col xs={12} sm={2}>
             <Select options={pagePerLimitArray} onChange={(e: any) => setLimit(e?.value)} placeholder="Select Page Size" defaultValue={{ value: 10, label: '10' }} />
           </Col>
-          <Col xs={12} sm={4}></Col>
-          <Col xs={12} sm={4} className="text-end"><Button onClick={() => navigate("/add-book")}>Add book</Button></Col>
+          <Col xs={12} sm={8}></Col>
+          <Col xs={12} sm={2} className="text-end"><Button onClick={() => navigate("/add-book")}>Add book</Button></Col>
         </Row>
         {allbooks?.length > 0 ? <>
           <Books books={currentItems} />
@@ -47,13 +52,14 @@ function Dashboard() {
             pageRangeDisplayed={limit}
             pageCount={pageCount}
             previousLabel="<"
-            renderOnZeroPageCount={null}
+            renderOnZeroPageCount={()=>console.log("called")}
             containerClassName="pagination justify-content-center"
             activeClassName="active"
             pageLinkClassName="page-link"
             previousLinkClassName="page-link"
             nextLinkClassName="page-link"
             breakLinkClassName="page-link"
+            
           />
         </> : <p className="text-center mt-4 fw-bold">No books available {" "}
           <Link to="/add-book">Click here</Link> to add

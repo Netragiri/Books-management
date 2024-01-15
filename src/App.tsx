@@ -22,6 +22,10 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    document.title = 'Book Management';
+  }, []); 
+
   return (
     <>
       <BrowserRouter>
