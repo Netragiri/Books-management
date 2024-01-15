@@ -41,7 +41,8 @@ function Books({ books }: BookProps) {
           <th>#</th>
           <th>Book Name</th>
           <th>Author Name</th>
-          <th>Price</th>
+          <th>Year</th>
+          <th>Genre</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -51,12 +52,13 @@ function Books({ books }: BookProps) {
             <td>{index + 1}</td>
             <td>{book.name}</td>
             <td>{book.author}</td>
-            <td>₹{book.price}</td>
+            <td>{book.year}</td>
+            <td>{book.genre}</td>
             <td>
               <button className="action-btns" onClick={() => navigate(`/edit-book/${book.id}`)}>
               <img src={editIcon} alt="edit-icon" />
               </button>{" "}
-              <button className='action-btns' onClick={() => handleShow(book.id)}>
+              <button className='action-btns' onClick={() => book?.id && handleShow(book.id)}>
               <img src={deleteIcon} alt="delet-icon" />
               </button>
             </td>

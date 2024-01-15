@@ -25,7 +25,8 @@ const ManageBook = ({ handleFormSubmit, initialValues, title }: ManageBookProps)
                             <Form onSubmit={handleSubmit} className='mt-4'>
                                 <FormField label="Book name" name="name" type="text" />
                                 <FormField label="Author name" name="author" type="text" />
-                                <FormField label="Price" name="price" type="text" />
+                                <FormField label="Year" name="year" type="text" />
+                                <FormField label="Genre" name="genre" type="text" />
 
                                 <Button type="submit" variant="primary" className='mt-3'>
                                     {title}

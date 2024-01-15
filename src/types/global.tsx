@@ -12,8 +12,9 @@ export interface DropDownValues {
 export interface BookAddValues {
   author: string,
   name: string,
-  price:string,
-  id?:string
+  genre:string,
+  id?:string,
+  year:string
 }
 
 export interface UserProfile {

@@ -1,8 +1,9 @@
 export interface BookInterface {
-    id: number;
+    id?: number | string;
     name: string;
     author: string;
-    price: string;
+    year: string;
+    genre: string
 }
 
 export const BOOKS: BookInterface[] = [
@@ -10,66 +11,66 @@ export const BOOKS: BookInterface[] = [
         id: 1,
         name: "Book1",
         author: "Andrew",
-        price: "200"
+        year:"2001",
+        genre:"Story"
     },
     {
         id: 2,
         name: "Book2",
         author: "Bob",
-        price: "400"
+        year:"2001",
+        genre:"Story"
     },
     {
         id: 3,
         name: "Book3",
         author: "Charlie",
-        price: "500"
+        year:"2001",
+        genre:"Story"
     },
     {
         id: 4,
         name: "Book3",
         author: "Charlie",
-        price: "500"
+        year:"2001",
+        genre:"Story"
     }, {
         id: 5,
         name: "Book3",
         author: "Charlie",
-        price: "500"
+        year:"2001",
+        genre:"Story"
     }, {
         id: 6,
         name: "Book3",
         author: "Charlie",
-        price: "500"
+        year:"2001",
+        genre:"Story"
     }, {
         id: 7,
         name: "Book3",
         author: "Charlie",
-        price: "500"
+        year:"2001",
+        genre:"Story"
     }, {
         id: 8,
         name: "Book3",
         author: "Charlie",
-        price: "500"
+        year:"2001",
+        genre:"Story"
     }, {
         id: 9,
         name: "Book3",
         author: "Charlie",
-        price: "500"
+        year:"2001",
+        genre:"Story"
     }, {
         id: 10,
         name: "Book3",
         author: "Charlie",
-        price: "500"
-    }, {
-        id: 11,
-        name: "Book3",
-        author: "Charlie",
-        price: "500"
-    }, {
-        id: 12,
-        name: "Book3",
-        author: "Charlie",
-        price: "500"
-    },
+        year:"2001",
+        genre:"Story"
+    }
 ];
 
 export const pagePerLimitArray = [

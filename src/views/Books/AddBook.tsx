@@ -14,7 +14,8 @@ const AddBook = () => {
   const initialValues = {
     name: '',
     author: '',
-    price: '',
+    genre: '',
+    year:''
   };
 
   const handleFormSubmit = (values: BookAddValues) => {
@@ -22,7 +23,8 @@ const AddBook = () => {
       {
         name: values.name,
         author: values.author,
-        price: values.price,
+        year: values.year,
+        genre: values.genre,
         id: Date.now().toString(),
       },
       ...books,
