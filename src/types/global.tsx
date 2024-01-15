@@ -15,3 +15,8 @@ export interface BookAddValues {
   price:string,
   id?:string
 }
+
+export interface UserProfile {
+  email:string,
+  password:string
+}

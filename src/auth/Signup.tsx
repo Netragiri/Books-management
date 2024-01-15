@@ -3,18 +3,36 @@ import { Formik } from "formik";
 import { signupSchema } from "../Shared/Utills/validationSchema";
 import "../assets/css/auth/login.css"
 import { Link, useNavigate } from "react-router-dom";
-import { successToast } from "../Shared/helper";
+import { errorToast, successToast } from "../Shared/helper";
 import PasswordInput from "../Shared/generic/passwordInput";
-import { FormValues } from "../types/global";
+import { FormValues, UserProfile } from "../types/global";
 
 function Signup() {
   const navigate = useNavigate()
   const handleFormSubmit = (values: FormValues) => {
-    const data = JSON.stringify({ email: values.email, password: values.password })
-    localStorage.setItem("userProfile", data)
-    successToast("Account Created Successfully")
-    navigate("/")
-  }
+    const existingProfilesString = localStorage.getItem("userProfiles");
+    const existingProfiles: UserProfile[] = existingProfilesString
+      ? JSON.parse(existingProfilesString)
+      : [];
+
+    const emailAlreadyExists = existingProfiles.some(
+      (profile) => profile.email === values.email
+    );
+
+    if (emailAlreadyExists) {
+      errorToast("User already exist");
+    } else {
+      const newProfile: UserProfile = { email: values.email, password: values.password };
+
+      // Add the new profile to the existing array
+      const updatedProfiles = [...existingProfiles, newProfile];
+
+      localStorage.setItem("userProfiles", JSON.stringify(updatedProfiles));
+
+      successToast("Account Created Successfully");
+      navigate("/");
+    }
+  };
   return (
     <>
       <Formik
