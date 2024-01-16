@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react";
 import ConfirmModal from "../../Shared/ConfirmModal";
 import logoutIcon from "../../assets/icons/logout.svg"
+import { successToast } from "../../Shared/helper";
 
 function Header() {
     const [show, setShow] = useState<boolean>(false);
@@ -16,6 +17,7 @@ function Header() {
         localStorage.setItem("isLoggdIn", "false")
         setTimeout(() => {
             navigate("/")
+            successToast("Logout Successfully")
         }, 500)
     }
     return (

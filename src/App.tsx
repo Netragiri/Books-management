@@ -9,15 +9,13 @@ function App() {
   const [books, setBooks] = useState([])
 
   useEffect(() => {
+    const storedData = localStorage.getItem("bookData");
     try {
-      const storedData = localStorage.getItem("bookData");
-
       if (storedData) {
         const bookData = JSON.parse(storedData);
         setBooks(bookData);
       }
     } catch (error) {
-      // Handle the error (e.g., log it, provide a default value, etc.)
       console.error("Error parsing JSON:", error);
     }
   }, []);

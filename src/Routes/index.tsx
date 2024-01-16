@@ -6,10 +6,12 @@ import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../views/Dasboard";
 import AddBook from "../views/Books/AddBook";
 import EditBook from "../views/Books/EditBook";
+import PageNotFound from "../views/PageNotfound";
 
 function AllRoutes() {
   return (
     <Routes>
+      <Route path='*' element={<PageNotFound />} />
       <Route path="/" element={<PublicRoute element={<Login />} />} />
       <Route path="/sign-up" element={<Signup />} />
       <Route path="/login" element={<PublicRoute element={<Login />} />} />

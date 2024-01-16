@@ -6,9 +6,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { errorToast, successToast } from "../Shared/helper";
 import { FormValues, UserProfile } from "../types/global";
 import PasswordInput from "../Shared/generic/passwordInput";
+import { useContext, useEffect } from "react";
+import { BOOKS } from "../Shared/constant";
+import { BookContext } from "../Shared/Context/BookContext";
 
 function Login() {
   const navigate = useNavigate()
+  const { bookList }: any = useContext(BookContext);
+  const [allbooks, setAllBooks] = bookList;
 
   const handleFormSubmit = (values: FormValues) => {
     const existingProfilesString = localStorage.getItem("userProfiles");
@@ -31,6 +36,11 @@ function Login() {
     }
   };
 
+  useEffect(() => {
+    if (allbooks?.length === 0) {
+      localStorage.setItem("bookData", JSON.stringify(BOOKS))
+    }
+  }, [])
   return (
     <>
       <Formik

@@ -43,7 +43,7 @@ function Books({ books, order, sortHandler }: BookProps) {
     <Table striped bordered hover className="mt-3">
       <thead>
         <tr>
-          <th>#</th>
+          <th>Sr.</th>
           <th>Book Name</th>
           <th>Author Name</th>
           <th>

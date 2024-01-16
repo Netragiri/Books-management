@@ -8,68 +8,38 @@ export interface BookInterface {
 
 export const BOOKS: BookInterface[] = [
     {
-        id: 1,
-        name: "Book1",
-        author: "Andrew",
-        year:"2001",
-        genre:"Story"
+        name: "The wolf",
+        author: "Albert wig",
+        year: "2011",
+        genre: "fiction",
+        id: "1"
     },
     {
-        id: 2,
-        name: "Book2",
-        author: "Bob",
-        year:"2001",
-        genre:"Story"
+        name: "The Skyscrapper",
+        author: "John boush",
+        year: "1997",
+        genre: "novel",
+        id: "2"
     },
     {
-        id: 3,
-        name: "Book3",
-        author: "Charlie",
-        year:"2001",
-        genre:"Story"
+        name: "Harry Potter",
+        author: "Charles",
+        year: "2000",
+        genre: "thriller",
+        id: "3"
     },
     {
-        id: 4,
-        name: "Book3",
-        author: "Charlie",
-        year:"2001",
-        genre:"Story"
+        name: "The Art of Ignored",
+        author: "Eithen less",
+        year: "1992",
+        genre: "mystry",
+        id: "4"
     }, {
-        id: 5,
-        name: "Book3",
-        author: "Charlie",
-        year:"2001",
-        genre:"Story"
-    }, {
-        id: 6,
-        name: "Book3",
-        author: "Charlie",
-        year:"2001",
-        genre:"Story"
-    }, {
-        id: 7,
-        name: "Book3",
-        author: "Charlie",
-        year:"2001",
-        genre:"Story"
-    }, {
-        id: 8,
-        name: "Book3",
-        author: "Charlie",
-        year:"2001",
-        genre:"Story"
-    }, {
-        id: 9,
-        name: "Book3",
-        author: "Charlie",
-        year:"2001",
-        genre:"Story"
-    }, {
-        id: 10,
-        name: "Book3",
-        author: "Charlie",
-        year:"2001",
-        genre:"Story"
+        name: "Atomic Habits",
+        author: "Willson rock",
+        year: "2009",
+        genre: "mystry",
+        id: "5"
     }
 ];
 
@@ -77,19 +47,19 @@ export const pagePerLimitArray = [
     { value: 10, label: '10' },
     { value: 20, label: '20' },
     { value: 30, label: '30' }
-  ]
+]
 
-  export const genreTypesBooks: { value?: string; label?: string }[] = [
+export const genreTypesBooks: { value?: string; label?: string }[] = [
     { value: "fiction", label: 'Fiction' },
     { value: "novel", label: 'Novel' },
     { value: "mystry", label: 'Mystry' },
     { value: "thriller", label: 'Thriller' },
-  ]
+]
 
 
-  export const TITLES = {
-    book:{
+export const TITLES = {
+    book: {
         add: "Add Book",
         edit: "Update Book"
     }
-  }
+}
