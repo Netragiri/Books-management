@@ -3,8 +3,8 @@ import { Formik } from "formik";
 import { signupSchema } from "../Shared/Utills/validationSchema";
 import "../assets/css/auth/login.css"
 import { Link, useNavigate } from "react-router-dom";
-import { errorToast, successToast } from "../Shared/Helper";
-import PasswordInput from "../Shared/Generic/passwordInput";
+import { errorToast, successToast } from "../Shared/helper";
+import PasswordInput from "../Shared/generic/passwordInput";
 import { FormValues, UserProfile } from "../types/global";
 
 function Signup() {

@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
-import AllRoutes from './routes';
+import AllRoutes from './Routes';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BookContext } from './Shared/Context/BookContext';

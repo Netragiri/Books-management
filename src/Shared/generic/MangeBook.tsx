@@ -1,11 +1,11 @@
 // import React, { useContext } from 'react';
 import { Formik, Field, ErrorMessage } from "formik";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
-import { bookSchema } from "../Utills/validationSchema";
+import { bookSchema } from "../../Shared/Utills/validationSchema";
 // import { BookContext } from '../../Shared/Context/BookContext';
 import { BookAddValues } from "../../types/global";
 import Select from "react-select";
-import { genreTypesBooks } from "../Constant";
+import { genreTypesBooks } from "../constant";
 import { useEffect, useState } from "react";
 
 interface ManageBookProps {

@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import ManageBook from '../../Shared/Generic/MangeBook'
+import ManageBook from '../../Shared/generic/MangeBook'
 import { BookAddValues } from '../../types/global'
 import { BookContext } from '../../Shared/Context/BookContext'
-import { TITLES } from '../../Shared/Constant'
-import { successToast } from '../../Shared/Helper'
+import { TITLES } from '../../Shared/constant'
+import { successToast } from '../../Shared/helper'
 
 function EditBook() {
     const { id } = useParams()

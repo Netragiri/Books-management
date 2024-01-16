@@ -1,5 +1,5 @@
 import { Table } from "react-bootstrap";
-import { BookInterface, genreTypesBooks } from "../../Shared/Constant";
+import { BookInterface, genreTypesBooks } from "../../Shared/constant";
 import { useNavigate } from "react-router-dom";
 import editIcon from "../../assets/icons/pencil-line.svg";
 import deleteIcon from "../../assets/icons/delete-bin-line.svg";
