@@ -3,11 +3,11 @@ import { Field, Formik } from "formik";
 import "../assets/css/auth/login.css"
 import { loginschema } from "../Shared/Utills/validationSchema";
 import { Link, useNavigate } from "react-router-dom";
-import { errorToast, successToast } from "../Shared/helper";
+import { errorToast, successToast } from "../Shared/Helper";
 import { FormValues, UserProfile } from "../types/global";
-import PasswordInput from "../Shared/generic/passwordInput";
+import PasswordInput from "../Shared/Generic/passwordInput";
 import { useContext, useEffect } from "react";
-import { BOOKS } from "../Shared/constant";
+import { BOOKS } from "../Shared/Constant";
 import { BookContext } from "../Shared/Context/BookContext";
 
 function Login() {

@@ -1,6 +1,6 @@
 import Select from "react-select";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import { genreTypesBooks, pagePerLimitArray } from "../../Shared/constant";
+import { genreTypesBooks, pagePerLimitArray } from "../../Shared/Constant";
 import ReactPaginate from "react-paginate";
 import Books from "../Books";
 import { Link, useNavigate } from "react-router-dom";

@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react";
 import ConfirmModal from "../../Shared/ConfirmModal";
 import logoutIcon from "../../assets/icons/logout.svg"
-import { successToast } from "../../Shared/helper";
+import { successToast } from "../../Shared/Helper";
 
 function Header() {
     const [show, setShow] = useState<boolean>(false);
