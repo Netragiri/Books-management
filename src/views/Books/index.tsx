@@ -36,7 +36,6 @@ function Books({ books, order, sortHandler }: BookProps) {
 
   const handleShow = (id: string | number) => {
     setId(id);
-
     setShow(true);
   };
 
@@ -48,7 +47,7 @@ function Books({ books, order, sortHandler }: BookProps) {
           <th>Book Name</th>
           <th>Author Name</th>
           <th>
-            Year{" "}
+            Published Year{" "}
             <span className="sort-box" onClick={sortHandler}>
               <img
                 className="order-icon"
@@ -104,7 +103,7 @@ function Books({ books, order, sortHandler }: BookProps) {
         show={show}
         id={id}
         handleClose={handleClose}
-        handleDelete={handleDelete}
+        btnHandler={handleDelete}
       />
     </Table>
   );

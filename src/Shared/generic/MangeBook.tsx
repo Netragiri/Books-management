@@ -51,7 +51,7 @@ const ManageBook = ({
               <Form onSubmit={handleSubmit} className="mt-4">
                 <FormField label="Book name" name="name" type="text" />
                 <FormField label="Author name" name="author" type="text" />
-                <FormField label="Year" name="year" type="text" />
+                <FormField label="Published year" name="year" type="text" />
                 <Form.Group>
                   <Form.Label className="fw-bold mt-3">Genre</Form.Label>
                   <Select
