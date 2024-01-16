@@ -10,7 +10,7 @@ function EditBook() {
     const { id } = useParams()
     const navigate = useNavigate()
     const { bookList }: any = useContext(BookContext)
-    const [books,setBooks] = bookList
+    const [books, setBooks] = bookList
     const [initialFormData, setInitialFormData] = useState({
         name: '',
         author: '',
@@ -23,18 +23,16 @@ function EditBook() {
             const data = books?.find((i: BookAddValues) => i.id === id)
             setInitialFormData({ name: data?.name, author: data?.author, year: data?.year, genre: data.genre })
         }
-    }, [id,books])
+    }, [id, books])
 
     const handleFormSubmit = (values: BookAddValues) => {
-        console.log(values)
-        const updatedBooks = books.map((book:BookAddValues) =>
-        book.id === id
-          ? { ...book, name: values.name, author: values.author, year: values.year, genre: values.genre }
-          : book
-      );
-      console.log(updatedBooks)
+        const updatedBooks = books.map((book: BookAddValues) =>
+            book.id === id
+                ? { ...book, name: values.name, author: values.author, year: values.year, genre: values.genre }
+                : book
+        );
         setBooks(updatedBooks)
-        localStorage.setItem("bookData",JSON.stringify(updatedBooks))
+        localStorage.setItem("bookData", JSON.stringify(updatedBooks))
         navigate("/dashboard")
         successToast("Update Successfully")
     };

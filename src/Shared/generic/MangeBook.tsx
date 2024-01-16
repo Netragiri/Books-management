@@ -20,13 +20,6 @@ const ManageBook = ({
   title,
 }: ManageBookProps) => {
   const [genre, setGenre] = useState({});
-  // const { bookList }: any = useContext(BookContext)
-  // const [books] = bookList
-  console.log(
-    "initialValues",
-    initialValues,
-    genreTypesBooks.find((i) => i.value === initialValues.genre)
-  );
 
   useEffect(() => {
     if (initialValues.genre) {

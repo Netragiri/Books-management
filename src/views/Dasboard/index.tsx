@@ -19,8 +19,6 @@ function Dashboard() {
     handlePageClick,
   } = useDashboard();
 
-
-  console.log(currentItems)
   return (
     <>
       <Container fluid="md" className="pt-3">
@@ -60,7 +58,6 @@ function Dashboard() {
               pageRangeDisplayed={limit}
               pageCount={pageCount}
               previousLabel="<"
-              renderOnZeroPageCount={() => console.log("called")}
               containerClassName="pagination justify-content-center"
               activeClassName="active"
               pageLinkClassName="page-link"
