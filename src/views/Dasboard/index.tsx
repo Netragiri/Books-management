@@ -19,6 +19,8 @@ function Dashboard() {
     handlePageClick,
   } = useDashboard();
 
+
+  console.log(currentItems)
   return (
     <>
       <Container fluid="md" className="pt-3">

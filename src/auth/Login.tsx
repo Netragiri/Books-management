@@ -39,6 +39,7 @@ function Login() {
   useEffect(() => {
     if (allbooks?.length === 0) {
       localStorage.setItem("bookData", JSON.stringify(BOOKS))
+      setAllBooks(BOOKS)
     }
   }, [])
   return (
