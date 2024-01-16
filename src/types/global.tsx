@@ -12,7 +12,10 @@ export interface DropDownValues {
 export interface BookAddValues {
   author: string,
   name: string,
-  genre:string,
+  genre?:string | {
+    value: string,
+    label: string
+  },
   id?:string,
   year:string
 }

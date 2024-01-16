@@ -14,7 +14,7 @@ const AddBook = () => {
   const initialValues = {
     name: '',
     author: '',
-    genre: '',
+    genre: "",
     year:''
   };
 

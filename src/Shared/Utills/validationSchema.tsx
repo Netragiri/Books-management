@@ -35,6 +35,10 @@ export const bookSchema = Yup.object({
   year: Yup.string()
     .required('Year is required')
     .matches(/^[0-9]+$/, 'Year must contain only numbers')
-    .max(4, 'Year must not exceed 4 digits'),
+    .length(4, 'Year must be exactly 4 digits')
+    .test('yearValidate', 'Invalid year', value => {
+      const yearValue = parseInt(value, 10);
+      return yearValue < 2024;
+    })
 });
   

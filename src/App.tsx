@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BookContext } from './Shared/Context/BookContext';
 import { useEffect, useState } from 'react';
+import "./App.css"
 
 function App() {
   const [books, setBooks] = useState([])

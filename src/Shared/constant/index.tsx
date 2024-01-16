@@ -3,7 +3,7 @@ export interface BookInterface {
     name: string;
     author: string;
     year: string;
-    genre: string
+    genre?: string
 }
 
 export const BOOKS: BookInterface[] = [
@@ -77,6 +77,13 @@ export const pagePerLimitArray = [
     { value: 10, label: '10' },
     { value: 20, label: '20' },
     { value: 30, label: '30' }
+  ]
+
+  export const genreTypesBooks: { value?: string; label?: string }[] = [
+    { value: "fiction", label: 'Fiction' },
+    { value: "novel", label: 'Novel' },
+    { value: "mystry", label: 'Mystry' },
+    { value: "thriller", label: 'Thriller' },
   ]
 
 

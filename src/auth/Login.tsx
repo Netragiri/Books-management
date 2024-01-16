@@ -71,7 +71,7 @@ function Login() {
               </form>
               <div className="mt-3 flex">
                 Don&apos;t have an account yet?{' '}
-                <Link to="/sign-up" className="sign-up-btn ms-2 fw-bold">
+                <Link to="/sign-up" className="sign-up-btn fw-bold">
                   Sign-up
                 </Link>
               </div>
